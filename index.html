@@ -1,116 +1,92 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Массажист Андрей | Ваш путь к здоровью</title>
-    <style>
-        :root { --bg: #1e1e1e; --card: #2d3133; --text: #f5f5f5; --muted: #a0a0a0; --accent: #7b61ff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        
-        /* Главный экран */
-        .hero { text-align: center; padding: 40px 0; }
-        .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid #444; }
-        h1 { font-size: 2rem; margin-bottom: 10px; font-weight: 600; }
-        .subtitle { font-size: 1.2rem; color: var(--muted); margin-bottom: 15px; }
-        .phone { font-size: 1.1rem; margin-bottom: 25px; font-weight: 500; }
-        
-        /* Кнопки */
-        .btn-group { display: flex; flex-direction: column; gap: 12px; margin: 0 auto 30px auto; }
-        .btn { display: block; padding: 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 500; text-align: center; transition: background 0.2s; }
-        .btn:hover { background: #6a52e6; }
-        
-        /* Секции */
-        .section { margin-bottom: 30px; padding: 25px; background: var(--card); border-radius: 12px; }
-        .section h2 { font-size: 1.5rem; margin-bottom: 20px; line-height: 1.3; }
-        .section h3 { font-size: 1.2rem; margin: 20px 0 10px 0; color: var(--text); }
-        .section p { margin-bottom: 15px; color: var(--muted); }
-        .section ul { list-style: none; margin-bottom: 15px; }
-        .section ul li { margin-bottom: 15px; }
-        .section ul li strong { color: var(--text); display: block; margin-bottom: 5px; font-size: 1.05rem; }
-        
-        /* Галерея */
-        .gallery { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-        .gallery img { width: 100%; border-radius: 8px; display: block; object-fit: cover; }
-        
-        /* Карта */
-        .map-container { width: 100%; height: 300px; border-radius: 8px; overflow: hidden; margin-top: 15px; }
-        .map-container iframe { width: 100%; height: 100%; border: none; }
-        
-        /* Футер */
-        .footer { font-size: 0.85rem; color: var(--muted); text-align: center; padding: 30px 0; border-top: 1px solid #333; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="hero">
-            <img src="assets/avatar.webp" alt="Андрей" class="avatar">
-            <h1>Массажист Андрей.</h1>
-            <p class="subtitle">Тело скажет вам спасибо.</p>
-            <p class="phone">Тел./SMS: 89804874646</p>
-            <div class="btn-group">
-                <a href="https://t.me/Andrey_Looo" class="btn">Telegram</a>
-                <a href="https://max.ru/u/f9LHodD0cOK26pA79D_jKjFz6mb_iOC8FaNsI9dEB3l6uTNIQU7Qn5KM-xA" class="btn">Макс</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>🎯 Кому эта программа необходима в первую очередь:</h2>
-            <ul>
-                <li><strong>💻 Офисным специалистам и фрилансерам</strong><p>Если ваш компьютер — это рабочий инструмент. Снимем напряжение в шее, плечах и верхней части спины после долгого сидячего дня.</p></li>
-                <li><strong>🚗 Профессиональным водителям и автолюбителям</strong><p>Глубоко проработаем зону поясницы и снимем мышечную усталость, накопившуюся за рулем.</p></li>
-                <li><strong>🏋️ Занимающимся фитнесом и спортом</strong><p>Поможем мышцам быстрее восстановиться после тренировок.</p></li>
-                <li><strong>🍃 Ищущим релаксацию и качественный отдых</strong><p>Сотрем следы ежедневного стресса и восстановим запас жизненных сил.</p></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>🧖 Классический массаж</h2>
-            <p>⏳ Длительность: 60 минут<br>💰 Стоимость: 2 500 руб.</p>
-            <p><em>Восстановления тонуса, снятия мышечного напряжения и глубокой релаксации.</em></p>
-            <h3>✨ Зоны особого внимания:</h3>
-            <ul>
-                <li><strong>Шейный отдел</strong> — снимает зажимы, убирает чувство «тяжелой головы» и скованности.</li>
-                <li><strong>Грудной отдел</strong> — раскрывает плечи, помогает расправить спину и улучшает дыхание.</li>
-                <li><strong>Поясничный отдел</strong> — убирает усталость и глубоко расслабляет мышцы нижней части позвоночника.</li>
-            </ul>
-            <h3>🎁 Подарок к каждому сеансу (по желанию):</h3>
-            <p><strong>Массаж голеней (без стоп)</strong> — бесплатно входит в стоимость сеанса.</p>
-        </div>
-
-        <div class="section">
-            <h2>Процесс</h2>
-            <div class="gallery">
-                <img src="assets/process1.png" alt="Процесс массажа">
-                <img src="assets/process2.png" alt="Процесс массажа">
-            </div>
-            
-            <h2 style="margin-top: 30px;">Экспертность и доверие</h2>
-            <div class="gallery">
-                <img src="assets/certificate.jpg" alt="Сертификат">
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Массажист Андрей | Ваш путь к здоровью</title>
+        <style>
+            :root { --bg: #1e1e1e; --card: #2d3133; --text: #f5f5f5; --muted: #a0a0a0; --accent: #7b61ff; }
+            * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+            body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .hero { text-align: center; padding: 40px 0; }
+            .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid #444; }
+            h1 { font-size: 2rem; margin-bottom: 10px; font-weight: 600; }
+            .subtitle { font-size: 1.2rem; color: var(--muted); margin-bottom: 15px; }
+            .phone { font-size: 1.1rem; margin-bottom: 25px; font-weight: 500; }
+            .btn-group { display: flex; flex-direction: column; gap: 12px; margin: 0 auto 30px auto; }
+            .btn { display: block; padding: 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 500; text-align: center; }
+            .section { margin-bottom: 30px; padding: 25px; background: var(--card); border-radius: 12px; }
+            .section h2 { font-size: 1.5rem; margin-bottom: 20px; line-height: 1.3; }
+            .section h3 { font-size: 1.2rem; margin: 20px 0 10px 0; color: var(--text); }
+            .section p { margin-bottom: 15px; color: var(--muted); }
+            .section ul { list-style: none; margin-bottom: 15px; }
+            .section ul li { margin-bottom: 15px; }
+            .section ul li strong { color: var(--text); display: block; margin-bottom: 5px; font-size: 1.05rem; }
+            .gallery { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+            .gallery img { width: 100%; border-radius: 8px; display: block; object-fit: cover; }
+            .map-container { width: 100%; height: 300px; border-radius: 8px; overflow: hidden; margin-top: 15px; }
+            .map-container iframe { width: 100%; height: 100%; border: none; }
+            .footer { font-size: 0.85rem; color: var(--muted); text-align: center; padding: 30px 0; border-top: 1px solid #333; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="hero">
+                <img src="assets/images/image-2f59a233.webp" alt="Андрей" class="avatar">
+                <h1>Массажист Андрей.</h1>
+                <p class="subtitle">Тело скажет вам спасибо.</p>
+                <p class="phone">Тел./SMS: 89804874646</p>
+                <div class="btn-group">
+                    <a href="https://t.me/Andrey_Looo" class="btn">Telegram</a>
+                    <a href="https://max.ru/u/f9LHodD0cOK26pA79D_jKjFz6mb_iOC8FaNsI9dEB3l6uTNIQU7Qn5KM-xA" class="btn">Макс</a>
+                </div>
             </div>
 
-            <h2 style="margin-top: 30px;">КАБИНЕТ</h2>
-            <div class="gallery">
-                <img src="assets/cabinet.webp" alt="Кабинет">
+            <div class="section">
+                <h2>🎯 Кому эта программа необходима в первую очередь:</h2>
+                <ul>
+                    <li><strong>💻 Офисным специалистам и фрилансерам</strong><p>Если ваш компьютер — это рабочий инструмент. Снимем напряжение в шее, плечах и верхней части спины после долгого сидячего дня.</p></li>
+                    <li><strong>🚗 Профессиональным водителям и автолюбителям</strong><p>Глубоко проработаем зону поясницы и снимем мышечную усталость, накопившуюся за рулем.</p></li>
+                    <li><strong>🏋️ Занимающимся фитнесом и спортом</strong><p>Поможем мышцам быстрее восстановиться после тренировок.</p></li>
+                    <li><strong>🍃 Ищущим релаксацию и качественный отдых</strong><p>Сотрем следы ежедневного стресса и восстановим запас жизненных сил.</p></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🧖 Классический массаж</h2>
+                <p>⏳ Длительность: 60 минут<br>💰 Стоимость: 2 500 руб.</p>
+                <p><em>Восстановления тонуса, снятия мышечного напряжения и глубокой релаксации.</em></p>
+                <h3>✨ Зоны особого внимания:</h3>
+                <ul>
+                    <li><strong>Шейный отдел</strong> — снимает зажимы, убирает чувство «тяжелой головы» и скованности.</li>
+                    <li><strong>Грудной отдел</strong> — раскрывает плечи, помогает расправить спину и улучшает дыхание.</li>
+                    <li><strong>Поясничный отдел</strong> — убирает усталость и глубоко расслабляет мышцы нижней части позвоночника.</li>
+                </ul>
+                <h3>🎁 Подарок к каждому сеансу (по желанию):</h3>
+                <p><strong>Массаж голеней (без стоп)</strong> — бесплатно входит в стоимость сеанса.</p>
+            </div>
+
+            <div class="section">
+                <h2>Фотогалерея</h2>
+                <div class="gallery">
+                    <img src="assets/images/image-5a10b8fc.jpg" alt="Фото"><img src="assets/images/image-7d229ba2.webp" alt="Фото"><img src="assets/images/image-95b869a4.webp" alt="Фото"><img src="assets/images/image-b1be837c.webp" alt="Фото"><img src="assets/images/image-b82082ec.webp" alt="Фото"><img src="assets/images/image-c3071931.jpg" alt="Фото"><img src="assets/images/image-d90988be.jpg" alt="Фото"><img src="assets/images/image-f038f01f.png" alt="Фото"><img src="assets/images/image-f8613bea.png" alt="Фото"><img src="assets/images/image-fe1def6f.webp" alt="Фото">
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📍 Адрес</h2>
+                <p>Московская обл. Дмитровский г.о. пос. Овсянниково ул. Соловьиная роща д. 3</p>
+                <p>Шлагбаум. Для открытия звоните по телефону 89804874646</p>
+                <div class="map-container">
+                    <iframe src="https://yandex.ru/map-widget/v1/?text=Московская%20обл.%20Дмитровский%20г.о.%20пос.%20Овсянниково%20ул.%20Соловьиная%20роща%20д.%203&z=16"></iframe>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Налоговый статус-самозанятый. ИНН 501000559757</p>
+                <p>Услуги носят исключительно эстетический (бытовой) характер.</p>
             </div>
         </div>
-
-        <div class="section">
-            <h2>📍 Адрес</h2>
-            <p>Московская обл. Дмитровский г.о. пос. Овсянниково ул. Соловьиная роща д. 3</p>
-            <p>Шлагбаум. Для открытия звоните по телефону 89804874646</p>
-            <div class="map-container">
-                <iframe src="https://yandex.ru/map-widget/v1/?text=Московская%20обл.%20Дмитровский%20г.о.%20пос.%20Овсянниково%20ул.%20Соловьиная%20роща%20д.%203&z=16"></iframe>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>Налоговый статус-самозанятый. ИНН 501000559757</p>
-            <p>Услуги носят исключительно эстетический (бытовой) характер.</p>
-        </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
