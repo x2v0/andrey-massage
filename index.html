@@ -226,30 +226,32 @@
             
             <!-- Счетчик посещений -->
             <div style="margin-top: 15px; opacity: 0.6; font-size: 0.9rem;">
-                <span id="visitor-counter">Загрузка...</span>
+                <span id="visitor-counter" style="background: #e2e8f0; padding: 4px 12px; border-radius: 20px; font-weight: 500;">👁️ Загрузка...</span>
             </div>
         </div>
     </div>
 
+    
+
+
     <script>
-        // Счетчик посещений (CountAPI)
+        // Счетчик посещений (CounterAPI)
         (function() {
             const namespace = "x2v0-andrey-massage";
             const key = "visits";
             const counterElement = document.getElementById("visitor-counter");
             
-            // Функция для получения текущего значения
-            fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+            fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
                 .then(response => response.json())
                 .then(data => {
                     if (counterElement) {
-                        counterElement.textContent = `👁️ ${data.value} просмотров`;
+                        counterElement.textContent = `👁️ ${data.count} просмотров`;
                     }
                 })
                 .catch(err => {
                     console.error("Ошибка счетчика:", err);
                     if (counterElement) {
-                        counterElement.textContent = "👁️ Счетчик недоступен";
+                        counterElement.style.display = 'none'; // Прячем, если не работает
                     }
                 });
         })();
