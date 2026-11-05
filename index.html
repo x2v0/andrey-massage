@@ -40,6 +40,26 @@
         
         .footer { font-size: 0.85rem; color: var(--muted); text-align: left; padding: 20px 0; margin-top: 20px; line-height: 1.5; }
         .footer p { margin-bottom: 15px; }
+    
+        .purple-card {
+            background-color: #AC9EF5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .purple-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .purple-card p {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0;
+            font-family: inherit;
+        }
     </style>
 </head>
 <body>
@@ -125,12 +145,14 @@
         <div class="section">
             <h3>Экспертность и доверие</h3>
         </div>
-        <div class="image-block">
+        <!-- Зеленый сертификат с отступами по бокам -->
+        <div class="image-block" style="padding: 0 20px;">
             <img loading="lazy" src="assets/images/certificate.webp" alt="Сертификат">
         </div>
-        <div class="image-block">
+        <!-- Фиолетовая карточка с книжкой и текстом -->
+        <div class="purple-card">
             <img loading="lazy" src="assets/images/diploma.webp" alt="Диплом">
-            <div class="image-caption">Опыт работы - более 4 лет.</div>
+            <p>Опыт работы - более 4 лет.</p>
         </div>
 
         <div class="section">
