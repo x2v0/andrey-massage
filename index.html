@@ -9,50 +9,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --bg: #202124; 
-            --text: #f5f5f5; 
-            --muted: #a0a0a0; 
-            --accent: #7b61ff; 
+            --bg: #f4f9f9;          /* Светлый фон */
+            --card-bg: #ffffff;     /* Белые карточки */
+            --text: #2d3748;        /* Темно-серый текст */
+            --muted: #718096;       /* Вторичный текст */
+            --accent: #0fa37f;      /* Мятно-изумрудный */
+            --accent-hover: #0c8a6b;
+            --border: #e2e8f0;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px; -webkit-font-smoothing: antialiased; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px 15px; }
         
-        .hero { text-align: center; padding: 30px 0 20px 0; }
-        .avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 2px solid #444; }
-        h1 { font-size: 1.8rem; margin-bottom: 20px; font-weight: 500; }
-        h2 { font-size: 1.8rem; margin-bottom: 5px; font-weight: 700; }
+        /* Главный экран */
+        .hero { text-align: center; padding: 40px 0 30px 0; }
+        .avatar { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid #fff; box-shadow: 0 8px 24px rgba(15, 163, 127, 0.15); }
+        h1 { font-size: 2rem; margin-bottom: 15px; font-weight: 700; color: #1a202c; letter-spacing: -0.5px; }
+        h2 { font-size: 1.8rem; margin-bottom: 5px; font-weight: 700; color: #1a202c; }
         .subtitle { font-size: 1.2rem; color: var(--muted); margin-bottom: 15px; }
-        .phone { font-size: 1.1rem; color: var(--muted); margin-bottom: 25px; }
+        .phone { font-size: 1.1rem; color: var(--text); margin-bottom: 25px; font-weight: 500; }
         
-        .btn-group { display: flex; flex-direction: column; gap: 12px; margin: 0 auto 30px auto; }
-        .btn { display: block; padding: 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 500; text-align: center; }
+        /* Кнопки */
+        .btn-group { display: flex; flex-direction: column; gap: 12px; margin: 0 auto 40px auto; }
+        .btn { display: block; padding: 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 12px; font-size: 1.1rem; font-weight: 600; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(15, 163, 127, 0.3); }
+        .btn:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15, 163, 127, 0.4); }
+        .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); box-shadow: none; }
+        .btn-outline:hover { background: rgba(15, 163, 127, 0.05); box-shadow: none; }
         
-        .section { margin-bottom: 30px; }
-        .section h3 { font-size: 1.4rem; margin-bottom: 15px; font-weight: 600; }
+        /* Карточки секций */
+        .section { background: var(--card-bg); margin-bottom: 25px; padding: 30px 25px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); border: 1px solid var(--border); }
+        .section h3 { font-size: 1.3rem; margin-bottom: 20px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 10px; }
         .section p { margin-bottom: 15px; color: var(--muted); font-size: 1rem; }
         
-        /* Стили для списков 1:1 как в оригинале */
-        .section ul { list-style-type: disc; padding-left: 20px; margin-bottom: 20px; color: var(--muted); }
-        .section ul li { margin-bottom: 10px; font-size: 1rem; line-height: 1.5; }
-        .section ul li strong { color: var(--text); font-weight: 600; }
+        /* Списки */
+        .section ul { list-style-type: none; padding-left: 0; margin-bottom: 20px; }
+        .section ul li { margin-bottom: 15px; font-size: 1rem; line-height: 1.5; color: var(--muted); position: relative; padding-left: 20px; }
+        .section ul li::before { content: "•"; color: var(--accent); position: absolute; left: 0; font-size: 1.5rem; top: -4px; }
+        .section ul li strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 2px; }
         .section ul li em { font-style: italic; color: var(--text); }
 
-        .image-block { margin-bottom: 25px; text-align: center; }
-        .image-block img { width: 100%; border-radius: 8px; display: block; margin-bottom: 10px; object-fit: cover; }
-        .image-caption { font-size: 1.1rem; color: var(--text); text-align: center; margin-bottom: 20px; }
+        /* Галерея */
+        .image-block { margin-bottom: 30px; text-align: center; }
+        .image-block img { width: 100%; border-radius: 16px; display: block; margin-bottom: 12px; object-fit: cover; box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
+        .image-caption { font-size: 1.05rem; color: var(--text); text-align: center; font-weight: 500; }
 
-        .narrow-img { width: 75%; max-width: 400px; margin: 0 auto 20px auto; display: block; border-radius: 8px; }
+        /* Узкие картинки */
+        .narrow-img { width: 85%; max-width: 400px; margin: 0 auto 25px auto; display: block; border-radius: 16px; box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
 
-        .purple-card { background-color: #AC9EF5; padding: 20px; border-radius: 12px; margin-bottom: 25px; text-align: center; }
-        .purple-card img { width: 100%; border-radius: 8px; margin-bottom: 15px; display: block; }
-        .purple-card p { color: white; font-size: 1.2rem; margin: 0; font-family: inherit; }
+        /* Фиолетовая карточка (сделаем её изумрудной для медтемы) */
+        .accent-card { background: linear-gradient(135deg, #0fa37f, #0c8a6b); padding: 25px; border-radius: 16px; margin-bottom: 30px; text-align: center; box-shadow: 0 8px 25px rgba(15, 163, 127, 0.3); }
+        .accent-card img { width: 100%; border-radius: 12px; margin-bottom: 20px; display: block; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .accent-card p { color: white; font-size: 1.2rem; margin: 0; font-weight: 600; }
 
-        .map-container { width: 100%; height: 300px; border-radius: 8px; overflow: hidden; margin-top: 15px; background: #333; }
+        /* Карта */
+        .map-container { width: 100%; height: 300px; border-radius: 16px; overflow: hidden; margin-top: 20px; background: #e2e8f0; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
         .map-container iframe { width: 100%; height: 100%; border: none; }
         
-        .footer { font-size: 0.85rem; color: var(--muted); text-align: left; padding: 20px 0; margin-top: 20px; line-height: 1.5; }
-        .footer p { margin-bottom: 15px; }
+        /* Футер */
+        .footer { font-size: 0.85rem; color: var(--muted); text-align: center; padding: 20px 0; margin-top: 10px; line-height: 1.5; }
+        .footer p { margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -64,8 +79,8 @@
             <p class="subtitle">Тело скажет вам спасибо.</p>
             <p class="phone">Тел./SMS: 89804874646</p>
             <div class="btn-group">
-                <a href="https://t.me/Andrey_Looo" class="btn">Telegram</a>
-                <a href="https://max.ru/u/f9LHodD0cOK26pA79D_jKjFz6mb_iOC8FaNsI9dEB3l6uTNIQU7Qn5KM-xA" class="btn">Макс</a>
+                <a href="https://t.me/Andrey_Looo" class="btn">Записаться в Telegram</a>
+                <a href="https://max.ru/u/f9LHodD0cOK26pA79D_jKjFz6mb_iOC8FaNsI9dEB3l6uTNIQU7Qn5KM-xA" class="btn btn-outline">Написать в MAX</a>
             </div>
         </div>
 
@@ -74,7 +89,7 @@
             <p>⏳ Длительность: 60 минут<br>💰 Стоимость: 2 500 руб.</p>
             <p><em>Восстановления тонуса, снятия мышечного напряжения и глубокой релаксации.</em></p>
             
-            <h3>✨ Зоны особого внимания:</h3>
+            <h3 style="margin-top: 30px;">✨ Зоны особого внимания:</h3>
             <p>За 60 минут сеанса проработаем ключевые отделы, которые страдают от ежедневных нагрузок сильнее всего:</p>
             <ul>
                 <li><strong>Шейный отдел</strong> — снимает зажимы, убирает чувство «тяжелой головы» и скованности.</li>
@@ -82,30 +97,31 @@
                 <li><strong>Поясничный отдел</strong> — убирает усталость и глубоко расслабляет мышцы нижней части позвоночника.</li>
             </ul>
             
-            <h3>🎁 Подарок к каждому сеансу (по желанию):</h3>
+            <h3 style="margin-top: 30px;">🎁 Подарок к каждому сеансу:</h3>
             <ul>
                 <li><strong>Массаж голеней (без стоп)</strong> — бесплатно входит в стоимость сеанса. <em>Особенно рекомендуется водителям для снятия усталости и забитости ног после поездок.</em></li>
             </ul>
         </div>
 
         <div class="section">
-            <h3>🎯 Кому эта программа необходима в первую очередь:</h3>
+            <h3>🎯 Кому эта программа необходима:</h3>
             <ul>
-                <li><strong>💻 Офисным специалистам и фрилансерам</strong><br><em>Если ваш компьютер — это рабочий инструмент. Снимем напряжение в шее, плечах и верхней части спины после долгого сидячего дня.</em></li>
-                <li><strong>🚗 Профессиональным водителям и автолюбителям</strong><br><em>Глубоко проработаем зону поясницы и снимем мышечную усталость, накопившуюся за рулем.</em></li>
-                <li><strong>🏋️ Занимающимся фитнесом и спортом</strong><br><em>Поможем мышцам быстрее восстановиться после тренировок.</em></li>
-                <li><strong>🍃 Ищущим релаксацию и качественный отдых</strong><br><em>Сотрем следы ежедневного стресса и восстановим запас жизненных сил.</em></li>
+                <li><strong>💻 Офисным специалистам и фрилансерам</strong><em>Если ваш компьютер — это рабочий инструмент. Снимем напряжение в шее, плечах и верхней части спины после долгого сидячего дня.</em></li>
+                <li><strong>🚗 Водителям и автолюбителям</strong><em>Глубоко проработаем зону поясницы и снимем мышечную усталость, накопившуюся за рулем.</em></li>
+                <li><strong>🏋️ Занимающимся фитнесом и спортом</strong><em>Поможем мышцам быстрее восстановиться после тренировок.</em></li>
+                <li><strong>🍃 Ищущим релаксацию и качественный отдых</strong><em>Сотрем следы ежедневного стресса и восстановим запас жизненных сил.</em></li>
             </ul>
             <p class="phone" style="text-align: right; margin-top: 20px;">Тел./SMS:<br>89804874646</p>
-            <div class="btn-group" style="margin-top: 15px;">
-                <a href="https://t.me/Andrey_Looo" class="btn">Telegram</a>
-                <a href="https://max.ru/u/f9LHodD0cOK26pA79D_jKjFz6mb_iOC8FaNsI9dEB3l6uTNIQU7Qn5KM-xA" class="btn">Макс</a>
+            <div class="btn-group" style="margin-top: 15px; margin-bottom: 0;">
+                <a href="https://t.me/Andrey_Looo" class="btn">Записаться в Telegram</a>
+                <a href="https://max.ru/u/f9LHodD0cOK26pA79D_jKjFz6mb_iOC8FaNsI9dEB3l6uTNIQU7Qn5KM-xA" class="btn btn-outline">Написать в MAX</a>
             </div>
         </div>
 
-        <div class="section" style="text-align: center;">
-            <h3 style="text-transform: uppercase;">КАБИНЕТ</h3>
+        <div class="section" style="text-align: center; padding-bottom: 10px;">
+            <h3 style="text-transform: uppercase; justify-content: center;">КАБИНЕТ</h3>
         </div>
+        
         <div class="image-block">
             <img class="narrow-img" loading="lazy" src="assets/images/cabinet.webp" alt="Кабинет">
         </div>
@@ -124,9 +140,10 @@
             <div class="image-caption">Поясничный отдел</div>
         </div>
 
-        <div class="section">
-            <p style="text-align: center; color: var(--text); font-size: 1.1rem; margin-bottom: 20px;">Проработаем икроножную, камбаловидную и переднюю большеберцовую мышцы.</p>
+        <div class="section" style="background: transparent; box-shadow: none; border: none; text-align: center; padding: 10px 0;">
+            <p style="color: var(--text); font-size: 1.1rem; font-weight: 500;">Проработаем икроножную, камбаловидную и переднюю большеберцовую мышцы.</p>
         </div>
+        
         <div class="image-block">
             <img class="narrow-img" loading="lazy" src="assets/images/calf.webp" alt="Массаж ног">
         </div>
@@ -135,18 +152,18 @@
         </div>
 
         <div class="section">
-            <h3>Экспертность и доверие</h3>
-        </div>
-        <div class="image-block">
-            <img loading="lazy" src="assets/images/certificate.webp" alt="Сертификат" class="narrow-img">
-        </div>
-        <div class="purple-card">
-            <img loading="lazy" src="assets/images/diploma.webp" alt="Диплом">
-            <p>Опыт работы - более 4 лет.</p>
+            <h3>🎓 Экспертность и доверие</h3>
+            <div class="image-block" style="margin-top: 20px;">
+                <img loading="lazy" src="assets/images/certificate.webp" alt="Сертификат" class="narrow-img" style="width: 100%; margin-bottom: 15px;">
+            </div>
+            <div class="accent-card">
+                <img loading="lazy" src="assets/images/diploma.webp" alt="Диплом">
+                <p>Опыт работы - более 4 лет.</p>
+            </div>
         </div>
 
         <div class="section">
-            <h3>Адрес</h3>
+            <h3>📍 Адрес</h3>
             <p>Московская обл. Дмитровский г.о. пос. Овсянниково ул. Соловьиная роща д. 3</p>
             <p>Шлагбаум. Для открытия звоните по телефону 89804874646</p>
             <div class="map-container">
@@ -154,9 +171,10 @@
             </div>
         </div>
 
-        <div class="section">
-            <p style="text-align: center; color: var(--text); font-size: 1.1rem; margin-bottom: 20px;">Калитка для входа и въездные ворота для автомобиля.</p>
+        <div class="section" style="background: transparent; box-shadow: none; border: none; text-align: center; padding: 10px 0;">
+            <p style="color: var(--text); font-size: 1.1rem; font-weight: 500;">Калитка для входа и въездные ворота для автомобиля.</p>
         </div>
+        
         <div class="image-block">
             <img loading="lazy" src="assets/images/gate.webp" alt="Ворота" class="narrow-img">
         </div>
