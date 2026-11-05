@@ -68,7 +68,45 @@
         /* Футер */
         .footer { font-size: 0.85rem; color: var(--muted); text-align: center; padding: 20px 0; margin-top: 10px; line-height: 1.5; }
         .footer p { margin-bottom: 10px; }
-    </style>
+    
+        /* ===== БЕЗОПАСНАЯ АДАПТАЦИЯ ДЛЯ ДЕСКТОПА ===== */
+        @media (min-width: 768px) {
+            /* Расширяем контейнер, чтобы сайт не был "скворечником" */
+            .container {
+                max-width: 800px; 
+                padding: 40px 20px;
+            }
+            
+            /* Делаем шрифты чуть крупнее для больших экранов */
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 2rem; }
+            .section h3 { font-size: 1.5rem; }
+            .section p, .section ul li { font-size: 1.1rem; }
+            
+            /* Кнопки в шапке ставим в ряд (это не сломает мобилку) */
+            .hero .btn-group {
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+            }
+            .hero .btn-group .btn {
+                padding: 16px 40px;
+            }
+
+            /* Картинки в галерее делаем чуть шире на десктопе (85% от 800px) */
+            .narrow-img {
+                width: 85%;
+                max-width: 600px;
+            }
+            
+            /* Картинка аватарки чуть больше */
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+</style>
 </head>
 <body>
     <div class="container">
