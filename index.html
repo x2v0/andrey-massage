@@ -44,6 +44,14 @@
         
         .footer { font-size: 0.85rem; color: var(--muted); text-align: left; padding: 20px 0; margin-top: 20px; line-height: 1.5; }
         .footer p { margin-bottom: 15px; }
+    
+        .narrow-img {
+            width: 60%;
+            max-width: 300px;
+            margin: 0 auto 20px auto;
+            display: block;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -160,10 +168,8 @@
             <p style="text-align: center; color: var(--text); font-size: 1.1rem; margin-bottom: 20px;">Калитка для входа и въездные ворота для автомобиля.</p>
         </div>
         <div class="image-block">
-            <img loading="lazy" src="assets/images/gate.webp" alt="Калитка">
-        </div>
-        <div class="image-block">
-            <img loading="lazy" src="assets/images/back1.webp" alt="Ворота">
+            <!-- Используем узкую картинку с классом narrow-img -->
+            <img loading="lazy" src="assets/images/back1.webp" alt="Ворота" class="narrow-img">
         </div>
 
         <!-- ФУТЕР -->
