@@ -234,25 +234,28 @@
     
 
 
+    
+
+
     <script>
-        // Счетчик посещений (CounterAPI)
         (function() {
-            const namespace = "x2v0-andrey-massage";
-            const key = "visits";
             const counterElement = document.getElementById("visitor-counter");
-            
-            fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
-                .then(response => response.json())
+            if (!counterElement) return;
+
+            fetch("https://api.counterapi.dev/v1/x2v0-massage/visits/up")
+                .then(res => res.json())
                 .then(data => {
-                    if (counterElement) {
+                    if (data && data.count !== undefined) {
                         counterElement.textContent = `👁️ ${data.count} просмотров`;
+                        counterElement.style.display = 'inline-block';
+                    } else {
+                        throw new Error("Нет данных");
                     }
                 })
                 .catch(err => {
                     console.error("Ошибка счетчика:", err);
-                    if (counterElement) {
-                        counterElement.style.display = 'none'; // Прячем, если не работает
-                    }
+                    // Если не удалось, прячем бейдж, чтобы не показывать "undefined"
+                    counterElement.style.display = 'none';
                 });
         })();
     </script>
