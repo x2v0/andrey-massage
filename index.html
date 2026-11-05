@@ -7,11 +7,11 @@
     <meta name="description" content="Профессиональный массаж спины и шеи. Снимаем напряжение, восстанавливаем тонус. Запись онлайн. Московская обл., Дмитровский г.о.">
     <style>
         :root { 
-            --bg: #f4f8f7; /* Светлый фон */
-            --card: #ffffff; /* Белые карточки */
-            --text: #2d3436; /* Темно-серый текст */
-            --muted: #636e72; /* Вторичный текст */
-            --accent: #00b894; /* Мятно-зеленый (здоровье) */
+            --bg: #f4f8f7; 
+            --card: #ffffff; 
+            --text: #2d3436; 
+            --muted: #636e72; 
+            --accent: #00b894; 
             --accent-hover: #009475;
             --border: #e0e6e4;
         }
@@ -35,55 +35,44 @@
         /* Секции */
         .section { margin-bottom: 25px; padding: 25px; background: var(--card); border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid var(--border); }
         .section h2 { font-size: 1.5rem; margin-bottom: 20px; line-height: 1.3; font-weight: 700; letter-spacing: -0.5px; color: #1e272e; }
-        .section h3 { font-size: 1.2rem; margin: 25px 0 10px 0; color: var(--text); font-weight: 600; }
         .section p { margin-bottom: 15px; color: var(--muted); font-size: 1rem; }
-        .section ul { list-style: none; margin-bottom: 15px; }
-        .section ul li { margin-bottom: 15px; padding-left: 20px; position: relative; color: var(--muted); }
-        .section ul li::before { content: "✓"; color: var(--accent); position: absolute; left: 0; font-size: 1.2rem; top: -2px; font-weight: bold; }
-        .section ul li strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 1.05rem; font-weight: 600; }
+        
+        /* Карточки Зон (Текст + Картинка вместе) */
+        .zone-card { background: #f8fbfa; border-radius: 12px; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--border); }
+        .zone-card img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .zone-text { padding: 20px; }
+        .zone-text h3 { font-size: 1.2rem; color: #1e272e; margin-bottom: 8px; font-weight: 700; }
+        .zone-text p { margin-bottom: 0; font-size: 0.95rem; }
 
-        /* Блок цен (Абонементы) */
+        /* Блок цен */
         .pricing-grid { display: flex; flex-direction: column; gap: 15px; }
-        .price-card { background: #f8fbfa; padding: 20px; border-radius: 12px; border: 1px solid var(--border); position: relative; transition: transform 0.2s; }
-        .price-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .price-card { background: #f8fbfa; padding: 20px; border-radius: 12px; border: 1px solid var(--border); position: relative; }
         .price-card.popular { border: 2px solid var(--accent); background: #ffffff; }
-        .price-badge { position: absolute; top: -12px; right: 20px; background: var(--accent); color: white; font-size: 0.75rem; font-weight: bold; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .price-badge { position: absolute; top: -12px; right: 20px; background: var(--accent); color: white; font-size: 0.75rem; font-weight: bold; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; }
         .price-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; color: #1e272e; }
         .price-val { font-size: 1.8rem; font-weight: 800; color: var(--accent); margin-bottom: 10px; }
         .price-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 15px; }
         
-        /* FAQ (Аккордеон) */
+        /* FAQ */
         details { background: #f8fbfa; margin-bottom: 10px; border-radius: 10px; overflow: hidden; cursor: pointer; border: 1px solid var(--border); }
         summary { padding: 15px 20px; font-weight: 600; list-style: none; position: relative; color: #1e272e; }
         summary::-webkit-details-marker { display: none; }
-        summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--accent); font-weight: normal; }
+        summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--accent); }
         details[open] summary::after { content: "-"; }
-        details p { padding: 0 20px 15px 20px; margin: 0; font-size: 0.95rem; color: var(--muted); }
+        details p { padding: 0 20px 15px 20px; margin: 0; font-size: 0.95rem; }
 
-        /* Картинки */
-        .image-block { margin-bottom: 20px; text-align: center; }
-        .image-block img { width: 100%; border-radius: 12px; display: block; margin-bottom: 10px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .image-caption { font-size: 1rem; color: var(--muted); text-align: center; margin-bottom: 15px; }
-        .image-caption strong { color: var(--text); }
-
-        /* Отзывы */
-        .review-card { background: #f8fbfa; padding: 15px; border-radius: 12px; margin-bottom: 15px; border: 1px solid var(--border); }
-        
-        /* Карта */
-        .map-container { width: 100%; height: 250px; border-radius: 12px; overflow: hidden; margin-top: 15px; background: #eee; border: 1px solid var(--border); }
+        /* Карта и футер */
+        .map-container { width: 100%; height: 250px; border-radius: 12px; overflow: hidden; margin-top: 15px; background: #eee; }
         .map-container iframe { width: 100%; height: 100%; border: none; }
-        
-        /* Футер */
         .footer { font-size: 0.8rem; color: var(--muted); text-align: center; padding: 30px 10px; border-top: 1px solid var(--border); margin-top: 20px; line-height: 1.5; }
         
-        /* Липкая кнопка внизу */
+        /* Липкая кнопка */
         .sticky-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 15px 20px; border-top: 1px solid var(--border); z-index: 1000; display: flex; justify-content: center; box-shadow: 0 -4px 15px rgba(0,0,0,0.05); }
         .sticky-cta a { width: 100%; max-width: 600px; display: block; padding: 16px; background: var(--accent); color: white; text-decoration: none; border-radius: 12px; font-size: 1.1rem; font-weight: 600; text-align: center; box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3); }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- HERO -->
         <div class="hero">
             <img src="assets/images/image-2f59a233.webp" alt="Андрей" class="avatar">
             <h1>Массажист Андрей.</h1>
@@ -94,7 +83,6 @@
             </div>
         </div>
 
-        <!-- ПРАЙС И АБОНЕМЕНТЫ -->
         <div class="section">
             <h2>💰 Услуги и стоимость</h2>
             <div class="pricing-grid">
@@ -112,100 +100,120 @@
                 <div class="price-card">
                     <div class="price-title">Подарочный сертификат</div>
                     <div class="price-val">2 500 ₽</div>
-                    <div class="price-desc">Отличный подарок для близких. Красивая электронная открытка с кодом.</div>
+                    <div class="price-desc">Отличный подарок для близких.</div>
                 </div>
             </div>
         </div>
 
-        <!-- ЭКСПЕРТНОСТЬ (ДОКУМЕНТЫ) -->
         <div class="section">
             <h2>🎓 Экспертность и доверие</h2>
-            <div class="image-block">
+            <div class="zone-card">
                 <img loading="lazy" src="assets/images/image-f038f01f.png" alt="Диплом">
-                <div class="image-caption">Диплом о профессиональной переподготовке</div>
+                <div class="zone-text">
+                    <h3>Диплом о переподготовке</h3>
+                    <p>Официальное подтверждение квалификации.</p>
+                </div>
             </div>
-            <div class="image-block">
+            <div class="zone-card">
                 <img loading="lazy" src="assets/images/image-d90988be.jpg" alt="Сертификат">
-                <div class="image-caption">Опыт работы — более 4 лет</div>
+                <div class="zone-text">
+                    <h3>Опыт работы — более 4 лет</h3>
+                    <p>Регулярное повышение квалификации и практика.</p>
+                </div>
             </div>
         </div>
 
-        <!-- ПРОЦЕСС И ЗОНЫ -->
         <div class="section">
             <h2>✨ Зоны особого внимания</h2>
             <p>За 60 минут сеанса проработаем ключевые отделы, которые страдают от ежедневных нагрузок сильнее всего:</p>
             
-            <div class="image-block" style="margin-top: 25px;">
+            <!-- Шея -->
+            <div class="zone-card" style="margin-top: 20px;">
                 <img loading="lazy" src="assets/images/image-c3071931.jpg" alt="Шейный отдел">
-                <div class="image-caption"><strong>Шейно-воротниковая зона</strong><br>Снимает зажимы и чувство «тяжелой головы».</div>
+                <div class="zone-text">
+                    <h3>Шейно-воротниковая зона</h3>
+                    <p>Снимает зажимы и чувство «тяжелой головы».</p>
+                </div>
             </div>
 
-            <div class="image-block">
-                <img loading="lazy" src="assets/images/image-4c1910dd.jpeg" alt="Грудной отдел">
-                <div class="image-caption"><strong>Грудной отдел</strong><br>Раскрывает плечи, помогает расправить спину.</div>
+            <!-- Спина -->
+            <div class="zone-card">
+                <img loading="lazy" src="assets/images/image-7d229ba2.webp" alt="Грудной отдел">
+                <div class="zone-text">
+                    <h3>Грудной отдел</h3>
+                    <p>Раскрывает плечи, помогает расправить спину.</p>
+                </div>
             </div>
 
-            <div class="image-block">
-                <img loading="lazy" src="assets/images/image-7d229ba2.webp" alt="Поясничный отдел">
-                <div class="image-caption"><strong>Поясничный отдел</strong><br>Убирает усталость и глубоко расслабляет мышцы.</div>
+            <!-- Поясница -->
+            <div class="zone-card">
+                <img loading="lazy" src="assets/images/image-4c1910dd.jpeg" alt="Поясничный отдел">
+                <div class="zone-text">
+                    <h3>Поясничный отдел</h3>
+                    <p>Убирает усталость и глубоко расслабляет мышцы.</p>
+                </div>
             </div>
 
-            <h3 style="margin-top: 30px;">🎁 Подарок к сеансу</h3>
-            <p>Проработаем икроножную, камбаловидную и переднюю большеберцовую мышцы (по желанию, бесплатно).</p>
+            <h3 style="margin-top: 30px; font-size: 1.2rem; color: #1e272e;">🎁 Подарок к сеансу</h3>
+            <p style="margin-bottom: 15px;">Проработаем икроножную, камбаловидную и переднюю большеберцовую мышцы (по желанию, бесплатно).</p>
             
-            <div class="image-block" style="margin-top: 15px;">
+            <!-- НОГИ (Сюда поставили ту самую "последнюю" картинку вперед) -->
+            <div class="zone-card">
+                <img loading="lazy" src="assets/images/image-95b869a4.webp" alt="Икроножные мышцы">
+                <div class="zone-text">
+                    <h3>Проработка ног</h3>
+                    <p>Снимает усталость и забитость мышц после поездок или тренировок.</p>
+                </div>
+            </div>
+            <div class="zone-card">
                 <img loading="lazy" src="assets/images/image-fe1def6f.webp" alt="Массаж ног">
             </div>
-            <div class="image-block">
-                <img loading="lazy" src="assets/images/image-95b869a4.webp" alt="Массаж ног">
-            </div>
-            <div class="image-block">
+            <div class="zone-card">
                 <img loading="lazy" src="assets/images/image-b82082ec.webp" alt="Массаж ног">
             </div>
         </div>
 
-        <!-- ОТЗЫВЫ -->
         <div class="section">
             <h2>⭐ Отзывы клиентов</h2>
-            <div class="review-card">
+            <div class="review-card" style="background: #f8fbfa; padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--border);">
                 <p style="color: #f1c40f; margin-bottom: 5px;">★★★★★</p>
                 <p style="font-style: italic; color: var(--text);">"Хожу к Андрею раз в две недели. Спина перестала болеть после сидячей работы. Очень внимательный подход!"</p>
                 <p style="font-size: 0.8rem; color: var(--muted); margin-top: 5px;">— Михаил</p>
             </div>
-            <div class="review-card">
+            <div class="review-card" style="background: #f8fbfa; padding: 15px; border-radius: 10px; border: 1px solid var(--border);">
                 <p style="color: #f1c40f; margin-bottom: 5px;">★★★★★</p>
                 <p style="font-style: italic; color: var(--text);">"Лучший массаж в Дмитрове. Отдельное спасибо за массаж голеней, ноги после тренировок вообще не болят."</p>
                 <p style="font-size: 0.8rem; color: var(--muted); margin-top: 5px;">— Елена</p>
             </div>
         </div>
 
-        <!-- КАБИНЕТ -->
         <div class="section">
             <h2>🏠 Кабинет</h2>
-            <div class="image-block">
+            <div class="zone-card">
                 <img loading="lazy" src="assets/images/image-b1be837c.webp" alt="Кабинет">
+                <div class="zone-text">
+                    <h3>Уютная обстановка</h3>
+                    <p>Полностью оборудованное место для проведения сеансов.</p>
+                </div>
             </div>
-            <p>Уютная и чистая атмосфера, полностью оборудованное место для проведения сеансов классического массажа.</p>
         </div>
 
-        <!-- FAQ -->
         <div class="section">
             <h2>❓ Частые вопросы</h2>
             <details>
                 <summary>Что взять с собой на первый сеанс?</summary>
-                <p>Ничего сверхъестественного не нужно. Возьмите с собой удобную сменную обувь (или чистые носки) и хорошее настроение. Всем необходимым (кушетка, масла, полотенца) мы обеспечим.</p>
+                <p>Возьмите удобную сменную обувь (или чистые носки) и хорошее настроение. Всем необходимым (кушетка, масла, полотенца) мы обеспечим.</p>
             </details>
             <details>
                 <summary>Есть ли противопоказания?</summary>
-                <p>Да, как и у любой процедуры. Массаж не проводится при: высокой температуре, острых воспалительных процессах, кожных заболеваниях, онкологии (без разрешения врача), тромбозах. Если у вас есть сомнения — напишите нам!</p>
+                <p>Массаж не проводится при: высокой температуре, острых воспалительных процессах, кожных заболеваниях, онкологии (без разрешения врача), тромбозах.</p>
             </details>
             <details>
                 <summary>Как проходит сеанс?</summary>
-                <p>Длительность сеанса — 60 минут. Из них 50 минут — это сам массаж, 10 минут — время на раздевание, одевание и расслабление. Вы можете попросить сделать акцент на конкретной зоне.</p>
+                <p>Длительность — 60 минут. 50 минут — сам массаж, 10 минут — время на раздевание и расслабление.</p>
             </details>
         </div>
 
-        <!-- АДРЕС -->
         <div class="section">
             <h2>📍 Адрес</h2>
             <p>Московская обл. Дмитровский г.о. пос. Овсянниково ул. Соловьиная роща д. 3</p>
@@ -214,22 +222,20 @@
                 <iframe loading="lazy" src="https://yandex.ru/map-widget/v1/?text=Московская%20обл.%20Дмитровский%20г.о.%20пос.%20Овсянниково%20ул.%20Соловьиная%20роща%20д.%203&z=16"></iframe>
             </div>
             <p style="margin-top: 20px; font-size: 1rem; color: var(--text);">Калитка для входа и въездные ворота для автомобиля.</p>
-            <div class="image-block" style="margin-top: 15px;">
+            <div class="zone-card" style="margin-top: 15px;">
                 <img loading="lazy" src="assets/images/image-5a10b8fc.jpg" alt="Калитка">
             </div>
-            <div class="image-block">
+            <div class="zone-card">
                 <img loading="lazy" src="assets/images/image-f8613bea.png" alt="Ворота">
             </div>
         </div>
 
-        <!-- ФУТЕР -->
         <div class="footer">
             <p>Налоговый статус-самозанятый. ИНН 501000559757</p>
-            <p>Услуги носят исключительно эстетический (бытовой) характер, направлены на уход за телом и релаксацию, и не являются медицинскими процедурами.</p>
+            <p>Услуги носят исключительно эстетический (бытовой) характер.</p>
         </div>
     </div>
 
-    <!-- ЛИПКАЯ КНОПКА ВНИЗУ -->
     <div class="sticky-cta">
         <a href="https://t.me/Andrey_Looo">Записаться на массаж</a>
     </div>
