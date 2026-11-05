@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Массажист Андрей | Ваш путь к здоровью</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #202124; --card: #2d3133; --text: #f5f5f5; --muted: #a0a0a0; --accent: #7b61ff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px; }
+        :root { 
+            --bg: #202124; 
+            --text: #f5f5f5; 
+            --muted: #a0a0a0; 
+            --accent: #7b61ff; 
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px; -webkit-font-smoothing: antialiased; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px 15px; }
         
         .hero { text-align: center; padding: 30px 0 20px 0; }
@@ -23,11 +31,12 @@
         .section { margin-bottom: 30px; }
         .section h3 { font-size: 1.4rem; margin-bottom: 15px; font-weight: 600; }
         .section p { margin-bottom: 15px; color: var(--muted); font-size: 1rem; }
-        .section ul { list-style: none; margin-bottom: 15px; padding-left: 0; }
-        .section ul li { margin-bottom: 15px; color: var(--muted); position: relative; padding-left: 15px; }
-        .section ul li::before { content: "•"; color: var(--muted); position: absolute; left: 0; font-size: 1.2rem; top: -2px; }
-        .section ul li strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 1.05rem; font-weight: 600; }
-        .section ul li span { color: var(--text); font-style: italic; display: block; margin-bottom: 5px; }
+        
+        /* Стили для списков 1:1 как в оригинале */
+        .section ul { list-style-type: disc; padding-left: 20px; margin-bottom: 20px; color: var(--muted); }
+        .section ul li { margin-bottom: 10px; font-size: 1rem; line-height: 1.5; }
+        .section ul li strong { color: var(--text); font-weight: 600; }
+        .section ul li em { font-style: italic; color: var(--text); }
 
         .image-block { margin-bottom: 25px; text-align: center; }
         .image-block img { width: 100%; border-radius: 8px; display: block; margin-bottom: 10px; object-fit: cover; }
@@ -74,16 +83,18 @@
             </ul>
             
             <h3>🎁 Подарок к каждому сеансу (по желанию):</h3>
-            <p><strong>Массаж голеней (без стоп)</strong> — бесплатно входит в стоимость сеанса. <em>Особенно рекомендуется водителям для снятия усталости и забитости ног после поездок.</em></p>
+            <ul>
+                <li><strong>Массаж голеней (без стоп)</strong> — бесплатно входит в стоимость сеанса. <em>Особенно рекомендуется водителям для снятия усталости и забитости ног после поездок.</em></li>
+            </ul>
         </div>
 
         <div class="section">
             <h3>🎯 Кому эта программа необходима в первую очередь:</h3>
             <ul>
-                <li><strong>💻 Офисным специалистам и фрилансерам</strong><span>Если ваш компьютер — это рабочий инструмент. Снимем напряжение в шее, плечах и верхней части спины после долгого сидячего дня.</span></li>
-                <li><strong>🚗 Профессиональным водителям и автолюбителям</strong><span>Глубоко проработаем зону поясницы и снимем мышечную усталость, накопившуюся за рулем.</span></li>
-                <li><strong>🏋️ Занимающимся фитнесом и спортом</strong><span>Поможем мышцам быстрее восстановиться после тренировок.</span></li>
-                <li><strong>🍃 Ищущим релаксацию и качественный отдых</strong><span>Сотрем следы ежедневного стресса и восстановим запас жизненных сил.</span></li>
+                <li><strong>💻 Офисным специалистам и фрилансерам</strong><br><em>Если ваш компьютер — это рабочий инструмент. Снимем напряжение в шее, плечах и верхней части спины после долгого сидячего дня.</em></li>
+                <li><strong>🚗 Профессиональным водителям и автолюбителям</strong><br><em>Глубоко проработаем зону поясницы и снимем мышечную усталость, накопившуюся за рулем.</em></li>
+                <li><strong>🏋️ Занимающимся фитнесом и спортом</strong><br><em>Поможем мышцам быстрее восстановиться после тренировок.</em></li>
+                <li><strong>🍃 Ищущим релаксацию и качественный отдых</strong><br><em>Сотрем следы ежедневного стресса и восстановим запас жизненных сил.</em></li>
             </ul>
             <p class="phone" style="text-align: right; margin-top: 20px;">Тел./SMS:<br>89804874646</p>
             <div class="btn-group" style="margin-top: 15px;">
