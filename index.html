@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Массажист Андрей | Ваш путь к здоровью</title>
     <style>
-        :root { 
-            --bg: #202124; 
-            --card: #2d3133; 
-            --text: #f5f5f5; 
-            --muted: #a0a0a0; 
-            --accent: #7b61ff; 
-        }
+        :root { --bg: #202124; --card: #2d3133; --text: #f5f5f5; --muted: #a0a0a0; --accent: #7b61ff; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px 15px; }
@@ -39,27 +33,20 @@
         .image-block img { width: 100%; border-radius: 8px; display: block; margin-bottom: 10px; object-fit: cover; }
         .image-caption { font-size: 1.1rem; color: var(--text); text-align: center; margin-bottom: 20px; }
 
+        .narrow-img { width: 60%; max-width: 300px; margin: 0 auto 20px auto; display: block; border-radius: 8px; }
+
         .map-container { width: 100%; height: 300px; border-radius: 8px; overflow: hidden; margin-top: 15px; background: #333; }
         .map-container iframe { width: 100%; height: 100%; border: none; }
         
         .footer { font-size: 0.85rem; color: var(--muted); text-align: left; padding: 20px 0; margin-top: 20px; line-height: 1.5; }
         .footer p { margin-bottom: 15px; }
-    
-        .narrow-img {
-            width: 60%;
-            max-width: 300px;
-            margin: 0 auto 20px auto;
-            display: block;
-            border-radius: 8px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- HERO -->
         <div class="hero">
             <h1>Ваш путь к здоровью</h1>
-            <img src="assets/images/cabinet.webp" alt="Андрей" class="avatar">
+            <img src="assets/images/avatar.webp" alt="Андрей" class="avatar">
             <h2>Массажист Андрей.</h2>
             <p class="subtitle">Тело скажет вам спасибо.</p>
             <p class="phone">Тел./SMS: 89804874646</p>
@@ -69,7 +56,6 @@
             </div>
         </div>
 
-        <!-- КЛАССИЧЕСКИЙ МАССАЖ -->
         <div class="section">
             <h3>🧖 Классический массаж</h3>
             <p>⏳ Длительность: 60 минут<br>💰 Стоимость: 2 500 руб.</p>
@@ -87,7 +73,6 @@
             <p><strong>Массаж голеней (без стоп)</strong> — бесплатно входит в стоимость сеанса. <em>Особенно рекомендуется водителям для снятия усталости и забитости ног после поездок.</em></p>
         </div>
 
-        <!-- КОМУ НЕОБХОДИМА -->
         <div class="section">
             <h3>🎯 Кому эта программа необходима в первую очередь:</h3>
             <ul>
@@ -103,31 +88,27 @@
             </div>
         </div>
 
-        <!-- КАБИНЕТ -->
         <div class="section" style="text-align: center;">
             <h3 style="text-transform: uppercase;">КАБИНЕТ</h3>
         </div>
         <div class="image-block">
-            <img loading="lazy" src="assets/images/diploma.webp" alt="Кабинет">
+            <img loading="lazy" src="assets/images/cabinet.webp" alt="Кабинет">
         </div>
         <div class="image-block">
             <img loading="lazy" src="assets/images/legs.webp" alt="Грудной отдел">
             <div class="image-caption">Грудной отдел</div>
         </div>
 
-        <!-- ШЕЙНО-ВОРОТНИКОВАЯ -->
         <div class="image-block">
-            <img loading="lazy" src="assets/images/calf2.webp" alt="Шейно-воротниковая зона">
+            <img loading="lazy" src="assets/images/neck1.webp" alt="Шейно-воротниковая зона">
             <div class="image-caption">Шейно-воротниковая зона</div>
         </div>
 
-        <!-- ПОЯСНИЧНЫЙ -->
         <div class="image-block">
-            <img loading="lazy" src="assets/images/avatar.webp" alt="Поясничный отдел">
+            <img loading="lazy" src="assets/images/back.webp" alt="Поясничный отдел">
             <div class="image-caption">Поясничный отдел</div>
         </div>
 
-        <!-- ИКРЫ -->
         <div class="section">
             <p style="text-align: center; color: var(--text); font-size: 1.1rem; margin-bottom: 20px;">Проработаем икроножную, камбаловидную и переднюю большеберцовую мышцы.</p>
         </div>
@@ -135,13 +116,12 @@
             <img loading="lazy" src="assets/images/master.webp" alt="Массаж ног">
         </div>
         <div class="image-block">
-            <img loading="lazy" src="assets/images/back.webp" alt="Массаж ног">
+            <img loading="lazy" src="assets/images/calf.webp" alt="Массаж ног">
         </div>
         <div class="image-block">
             <img loading="lazy" src="assets/images/calf1.webp" alt="Массаж ног">
         </div>
 
-        <!-- ЭКСПЕРТНОСТЬ -->
         <div class="section">
             <h3>Экспертность и доверие</h3>
         </div>
@@ -149,11 +129,10 @@
             <img loading="lazy" src="assets/images/certificate.webp" alt="Сертификат">
         </div>
         <div class="image-block">
-            <img loading="lazy" src="assets/images/neck.webp" alt="Диплом">
+            <img loading="lazy" src="assets/images/diploma.webp" alt="Диплом">
             <div class="image-caption">Опыт работы - более 4 лет.</div>
         </div>
 
-        <!-- АДРЕС -->
         <div class="section">
             <h3>Адрес</h3>
             <p>Московская обл. Дмитровский г.о. пос. Овсянниково ул. Соловьиная роща д. 3</p>
@@ -163,16 +142,16 @@
             </div>
         </div>
 
-        <!-- ВОРОТА -->
         <div class="section">
             <p style="text-align: center; color: var(--text); font-size: 1.1rem; margin-bottom: 20px;">Калитка для входа и въездные ворота для автомобиля.</p>
         </div>
         <div class="image-block">
-            <!-- Используем узкую картинку с классом narrow-img -->
-            <img loading="lazy" src="assets/images/back1.webp" alt="Ворота" class="narrow-img">
+            <img loading="lazy" src="assets/images/gate.webp" alt="Ворота">
+        </div>
+        <div class="image-block">
+            <img loading="lazy" src="assets/images/wall.webp" alt="Забор" class="narrow-img">
         </div>
 
-        <!-- ФУТЕР -->
         <div class="footer">
             <p>Налоговый статус-самозанятый. ИНН 501000559757</p>
             <p>Услуги носят исключительно эстетический (бытовой) характер, направлены на уход за телом и релаксацию, и не являются медицинскими процедурами.</p>
