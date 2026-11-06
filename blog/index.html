@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог массажиста Андрея</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #f4f9f9; --card: #ffffff; --text: #2d3748; --muted: #718096; --accent: #0fa37f; --border: #e2e8f0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .nav { margin-bottom: 30px; }
+        .nav a { color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; }
+        .nav a:hover { text-decoration: underline; }
+        h1 { font-size: 2rem; color: #1a202c; margin-bottom: 30px; }
+        .post-card { background: var(--card); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid var(--border); margin-bottom: 20px; transition: transform 0.2s; }
+        .post-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(15, 163, 127, 0.1); }
+        .post-date { font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; }
+        .post-title { font-size: 1.4rem; color: #1a202c; margin-bottom: 15px; font-weight: 700; }
+        .post-excerpt { color: var(--muted); margin-bottom: 20px; }
+        .read-more { display: inline-block; background: var(--accent); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        .read-more:hover { background: #0c8a6b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav"><a href="../index.html">← На главную</a></div>
+        <h1>Блог о здоровье и массаже</h1>
+        
+        <div class="post-card">
+            <div class="post-date">6 ноября 2026</div>
+            <div class="post-title">Массаж, код и побег из плена тяжелых конструкторов</div>
+            <div class="post-excerpt">История о том, как сайт мастера по массажу похудел с 24 МБ до 1 МБ, переехал на собственный домен и стал работать в 10 раз быстрее...</div>
+            <a href="post-1.html" class="read-more">Читать полностью</a>
+        </div>
+    </div>
+</body>
+</html>
